@@ -90,7 +90,6 @@ if (mt_rand(0,1)){
     echo "\nОтказ заемщика";
     $sdk->postOrderStop($orderID);
     exit();
-
 }
 
  do{

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ndolgopolov
- * Date: 28.09.17
- * Time: 16:53
- */
 
 class Passport
 {

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ndolgopolov
- * Date: 28.09.17
- * Time: 9:56
- */
+
 require_once "Borrower.php";
 class Order
 {

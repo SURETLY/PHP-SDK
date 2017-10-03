@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ndolgopolov
- * Date: 28.09.17
- * Time: 13:05
- */
+
 require_once "Order.php";
 class Orders
 {

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ndolgopolov
- * Date: 27.09.17
- * Time: 17:26
- */
+
 require_once "Name.php";
 require_once "Birth.php";
 require_once "Passport.php";

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ndolgopolov
- * Date: 02.10.17
- * Time: 10:42
- */
 
 class NewOrder
 {

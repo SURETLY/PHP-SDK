@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ndolgopolov
- * Date: 29.09.17
- * Time: 16:28
- */
 
 class OrderStatus
 {

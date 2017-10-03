@@ -1,4 +1,17 @@
 {
+
+    "name": "suretly/lenderAPI-SDK",
+    "type": "library",
+    "description": "PHP-SDK for Suretly Lender API",
+    "keywords": ["suretly", "lenderAPI"],
+    "homepage": "https://github.com/SURETLY/PHP-SDK",
+    "authors": [
+        {
+            "name": "Nikolay Dolgopolov",
+            "email": "dolgopolov.n.v@gmail.com",
+            "homepage": "https://github.com/ndolgopolov"
+        }
+    ],
     "require": {
         "guzzlehttp/guzzle": "~6.0",
         "paragonie/random_compat": "^2.0",

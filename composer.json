@@ -17,5 +17,6 @@
         "guzzlehttp/guzzle": "~6.0",
         "paragonie/random_compat": "^2.0",
         "netresearch/jsonmapper": "^1.3"
-    }
+    },
+    "minimum-stability": "stable"
 }

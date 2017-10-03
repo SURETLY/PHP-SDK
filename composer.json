@@ -1,6 +1,6 @@
 {
 
-    "name": "suretly/lenderAPI-SDK",
+    "name": "suretly/lender-api-sdk",
     "type": "library",
     "description": "PHP-SDK for Suretly Lender API",
     "keywords": ["suretly", "lenderAPI"],

@@ -7,14 +7,16 @@
  */
 require 'vendor/autoload.php';
 require 'config.php';
+require_once "Model/NewOrder.php";
 require_once "Model/Orders.php";
 require_once "Model/Options.php";
 require_once "Model/OrderStatus.php";
 require_once "Model/Country.php";
 require_once "Model/Currency.php";
+require_once "Model/APIMessage.php";
 
 use GuzzleHttp\Client;
-
+use GuzzleHttp\Exception\BadResponseException;
 const countries = "/countries";
 const currencies = "/currencies";
 const options = "/options";
@@ -37,16 +39,16 @@ class lenderSDK
     private $config;
     private $id;
     private $token;
-    private $debug;
 
-
-    public function __construct($id, $token, $debug = false)
+    public function __construct($id,//Lender id
+                                $token, //Lender token
+                                $debug = false) //Переключение dev/prod
     {
         $this->id = $id;
         $this->token = $token;
-        $this->debug = $debug;
         $this->config = new config($debug);
-        $this->apiClient = new Client(['base_uri' => $this->config->getApiURL()]);
+        $this->apiClient = new Client(['base_uri' => $this->config->getApiURL(),
+                                        'debug' => false]);
         $this->jsonMapper = new JsonMapper();
     }
 
@@ -64,30 +66,31 @@ class lenderSDK
 
     private function buildURI($URI, $param = null){
 
-        return $URI.$param?http_build_query($param):"";
-
+        if ($param)$paramStr = "?".http_build_query($param);
+        return $URI.$paramStr;
     }
 
     private function getResponse($URI){
 
-        $res = $this->apiClient->get($URI,['headers' => $this->getHeaders()]);
         try  {
-            return $res->getBody();
+            $result = $this->apiClient->get($URI,['headers' => $this->getHeaders()])->getBody();
+        } catch (BadResponseException $exception) {
+            $result = (string)$exception->getResponse()->getBody()->getContents();
         }
-        catch(exception $e){
-
-            //
-
-        }
-
+            return $result;
     }
 
-    private function sendPost($URI, $param){
-        $result = $this->apiClient->request("POST", $URI, ['headers' => $this->getHeaders(), 'body'=>json_encode($param), 'debug' => $this->debug]);
-        return json_decode($result->getBody());
+    private function sendPost($URI, $param=null){
+
+        try {
+            $result = $this->apiClient->request("POST", $URI, ['headers' => $this->getHeaders(), 'body'=>json_encode($param)])->getBody();
+        } catch (BadResponseException $exception) {
+            $result = (string)$exception->getResponse()->getBody()->getContents();
+        }
+        return $result;
     }
 
-    private function mapResponse($response, $mappingObj){
+    public function mapToObject($response, $mappingObj){
 
         return $this->jsonMapper->map(json_decode($response), $mappingObj);
 
@@ -104,31 +107,34 @@ class lenderSDK
     }
     public function getOptions(){
 
-        return $this->getResponse(options, new Options());
+        $res = $this->getResponse(options);
 
+        return $this->mapToObject($res, new Options());
     }
     public function getOrders($from, $to, $limit, $skip){
 
         $res = $this->getResponse($this->buildURI(orders,["from"=>$from, "to"=>$to, "limit"=>$limit, "skip"=>$skip]));
 
-        return $this->mapResponse($res, new Orders());
+        return $this->mapToObject($res, new Orders());
     }
 
     public function postNewOrder($order){
 
-        return $this->sendPost(newOrder, $order);
+        $res = $this->sendPost(newOrder, $order);
+        return $this->mapToObject($res, new Order());
 
     }
 
     public function getOrderStatus($orderId){
 
         $res = $this->getResponse($this->buildURI(statusOrder, ['id'=>$orderId]));
-        return $this->mapResponse($res, new OrderStatus());
+        return $this->mapToObject($res, new OrderStatus());
     }
 
     public function postOrderStop($orderId){
 
-        return $this->sendPost(stopOrder, ["id"=>$orderId]);
+        $rsp = $this->sendPost($this->buildURI(stopOrder, ['id'=>$orderId]));
+        return $this->mapToObject(json_encode($rsp), new APIMessage());
 }
 
     public function getContract($orderId){
@@ -139,30 +145,30 @@ class lenderSDK
 
     public function postContractAccept($orderId){
 
-        return $this->sendPost(acceptContract, ["id"=>$orderId]);
+        return $this->sendPost($this->buildURI(acceptContract, ['id'=>$orderId]));
 
     }
 
     public function postOrderIssued($orderId){
 
-        return $this->sendPost(orderIssued, ["id"=>$orderId]);
+        return $this->sendPost($this->buildURI(orderIssued, ['id'=>$orderId]));
 
     }
 
     public function postOrderPaid($orderId){
 
-        return $this->sendPost(orderPaid, ["id"=>$orderId]);
+        return $this->sendPost($this->buildURI(orderPaid, ['id'=>$orderId]));
 
     }
 
     public function postOrderPartialPaid($orderId, $sum){
 
-        return $this->sendPost(orderPartialPaid, ["id"=>$orderId, "sum"=>$sum]);
+        return $this->sendPost($this->buildURI(orderPartialPaid, ['id'=>$orderId, "sum"=>$sum]));
 
     }
     public function postOrderUnpaid($orderId){
 
-        return $this->sendPost(orderUnpaid, ["id"=>$orderId]);
+        return $this->sendPost($this->buildURI(orderUnpaid, ['id'=>$orderId]));
 
     }
 

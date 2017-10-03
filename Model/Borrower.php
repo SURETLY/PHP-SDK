@@ -18,7 +18,7 @@ class Borrower
     public $name;
     /**
      * gender
-     * @var integer
+     * @var string
      */
     public $gender;
     /**

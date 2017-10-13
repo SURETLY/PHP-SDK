@@ -12,7 +12,7 @@ class config
     {
         if ($debug){
             $this->URL_SCHEME = "https";
-            $this->API_HOST = "dev.suretly.io";
+            $this->API_HOST = "demo.suretly.io";
             $this->API_PORT = "3000";
         } else{
             $this->URL_SCHEME = "https";

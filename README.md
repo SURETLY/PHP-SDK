@@ -1,73 +1,72 @@
 # PHP-SDK
 
 SDK for Suretly Lender API
-## Установка
-Для подключения SDK необходимо скопировать  папку с SDK в проект и подключить файл Suretly.php в месте использования SDK. Так же возможна установка через Composer: 
-composer require suretly/lender-api-sdk
-## Подключение
+## Installation
+To add SDK you need to copy SDK folder to your project and connect file Suretly.php in the place where you're going to use SDK. It is also possible to install via Composer: composer require suretly/lender-api-sdk
+## Connection
     require_once "Suretly.php";
     ...
-    $sdk = Suretly::ClientDemo("lender_id", "lender_token"); //инициализация SDK для работы с demo-сервером 
+    $sdk = Suretly::ClientDemo("lender_id", "lender_token"); //Initializing the SDK to work with the demo-server
     
-    $sdk = Suretly::ClientProduction("lender_id", "lender_token"); //инициализация SDK для работы с production-сервером
+    $sdk = Suretly::ClientProduction("lender_id", "lender_token"); //Initializing the SDK to work with the production-server
 
-## Вызов методов API через SDK
+## Calling API methods with SDK
 
-### #1 Общие методы
+### #1 General methods
 
-#### #1.1 Получение параметров для поиска поручителей
+#### #1.1 Getting parameters for surety search
 
     $options = $sdk->getOptions();
-#### #1.2 Список заявок
+#### #1.2 Orders list
 
     $orders = $sdk->getOrders($from, $to, $limit, $skip);
-### #2 Создание и работа с заявками
+### #2 Creating and handling orders
 
-#### #2.2 Создать заявку на поручительство
-    $newOrder =  $sdk->mapToObject($orderJson, new NewOrder()); //создаем объект заявки
-    $orderID = $sdk->postNewOrder($newOrder)->id; //отправляем заявку Suretly, в ответ получаем id созданной заявки для дальнейшей работы с ней.
+#### #2.2 Create surety order
+    $newOrder =  $sdk->mapToObject($orderJson, new NewOrder()); //create an order object
+    $orderID = $sdk->postNewOrder($newOrder)->id;
     
-#### #2.3 Получить статус заявки
+#### #2.3 Get order status
 
     $orderStatus = $sdk->getOrderStatus($orderID);
     
-#### #2.4 Отменить заявку
+#### #2.4 Cancel order
     
     $sdk->postOrderStop($orderID);
     
-#### #2.9 Получить контракт для заемщика
+#### #2.9 Get borrower contract
 
     $sdk->getContract($orderID);
     
-#### #2.10 Подтвердить что договор по заявке подписан заемщиком
+#### #2.10 Confirm that contract is signed by borrower
 
     $sdk->postContractAccept($orderID);
     
-#### #2.11 Подтвердить что заявка оплачена и выдана
+#### #2.11 Confirm that order is paid and issued
 
     $sdk->postOrderIssued($orderID);
     
-### #3 Работа с оплатой заявки
+### #3 Working with order payment
 
-#### #3.5 Отметить займ как выплаченный
+#### #3.5 Mark loan as paid
 
     $sdk->postOrderPaid($orderID);
     
-#### #3.6 Отметить займ как выплаченный частично
+#### #3.6 Mark loan as partially paid
 
-    $sdk->postOrderPartialPaid($orderID, $sum); //$sum - сумма частичной оплаты заявки
+    $sdk->postOrderPartialPaid($orderID, $sum); //$sum - amount of partial payment of an order
     
-#### #3.7 Отметить займ как просроченный
+#### #3.7 Mark loan as overdue
 
     $sdk->postOrderUnpaid($orderID);
     
-### Справочники
+### Dictionaries
 
-#### Валюты
+#### Currencies
 
     $currencies = $sdk->getCurrencies();
     
-#### Страны
+#### Countries
 
     $countries = $sdk->getCountries();
 

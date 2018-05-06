@@ -1,5 +1,7 @@
 <?php
 
+require_once "Borrower.php";
+
 class NewOrder
 {
 

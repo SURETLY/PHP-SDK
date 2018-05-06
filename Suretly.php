@@ -9,6 +9,7 @@ require_once "Model/OrderStatus.php";
 require_once "Model/Country.php";
 require_once "Model/Currency.php";
 require_once "Model/APIMessage.php";
+require_once "Model/Error.php";
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;

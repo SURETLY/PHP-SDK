@@ -14,31 +14,32 @@ $borrowerJson = "{
             },
             \"gender\": \"1\",  
             \"birth\": {
-                \"date\": 1234567890,
+                \"date\": \"01.04.1981\",
                 \"place\": \"Voronej\"
             },
             \"email\": \"test@suretly.com\",
-            \"phone\": \"+3 000 123 5678\",
+            \"phone\": \"+30001235678\",
             \"ip\": \"123.123.123.123\",
             \"profile_url\": \"https://www.facebook.com/profile/\",
             \"photo_url\":\"http://file.ru/face.jpg\",
-            \"passport\": {
+            \"identity_document_type\":\"passport_rf\",
+            \"identity_document\": {
                 \"series\": \"5201\",
                 \"number\": \"2345678\",
                 \"issue_date\": \"21.12.2003\",
                 \"issue_place\": \"Omsk\",
-                \"issue_code\":  \"11-22\"
-            },
-            \"registration\": {
-                \"country\": \"Russia\",
-                \"zip\": \"630080\",
-                \"area\": \"Russia\",
-                \"city\": \"Berdsk\",
-                \"street\": \"Lenina\",
-                \"house\": \"1\",
-                \"building\": \"2\",
-                \"flat\": \"123\"
-            },
+                \"issue_code\":  \"11-22\",
+                \"registration\": {
+                    \"country\": \"Russia\",
+                    \"zip\": \"630080\",
+                    \"area\": \"Russia\",
+                    \"city\": \"Berdsk\",
+                    \"street\": \"Lenina\",
+                    \"house\": \"1\",
+                    \"building\": \"2\",
+                    \"flat\": \"123\"
+                }
+            },           
             \"residential\": {
                 \"country\": \"Russia\",
                 \"zip\": \"630080\",
@@ -58,7 +59,7 @@ $orderJson = "{
    \"is_public\": true,
    \"borrower\": ".$borrowerJson.",
    \"user_credit_score\":  123,   
-   \"loan_sum\":  45000.00, 
+   \"loan_sum\":  5123.00, 
    \"loan_term\": 30,
    \"loan_rate\": 56.34,
    \"currency_code\": \"RUB\",

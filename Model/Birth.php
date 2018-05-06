@@ -4,7 +4,7 @@ class Birth
 {
     /**
      * date
-     * @var integer
+     * @var string
      */
     public $date;
     /**

@@ -2,8 +2,12 @@
 
 require_once "Name.php";
 require_once "Birth.php";
-require_once "Passport.php";
 require_once "Address.php";
+require_once "IdentityDocument.php";
+require_once "PassportRF.php";
+require_once "IdKZ.php";
+require_once "Ssn.php";
+
 class Borrower
 {
     /**
@@ -48,16 +52,16 @@ class Borrower
     public $photo_url;
 
     /**
-     * Passport
-     * @var Passport
+     * Identity document
+     * @var PassportRF
      */
-    public $passport;
+    public $identity_document;
 
     /**
-     * registration
-     * @var Address
+     * Identity document type
+     * @var string
      */
-    public $registration;
+    public $identity_document_type;
 
     /**
      * residential

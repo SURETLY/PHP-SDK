@@ -26,6 +26,7 @@ const orderIssued = "/order/issued";
 const orderPaid = "/order/paid";
 const orderPartialPaid = "/order/partialpaid";
 const orderUnpaid = "/unpaid";
+const orderUploadImage = "/order/image_upload";
 
 
 class Suretly
@@ -292,5 +293,42 @@ class Suretly
 
     }
 
+    /**
+     * @param $orderId
+     * @param $cfile
+     * @return string
+     */
+    public function uploadImage($orderId, $cfile){
+
+        // initialise the curl request
+        $url = $this->config->getApiURL() . $this->buildURI(orderUploadImage, ['id'=>$orderId]);
+
+        $post = array (
+            'file' => $cfile
+        );
+
+        $header = array(
+            '_auth: ' . $this->getAuthToken(),
+            'Content-Type: multipart/form-data'
+        );
+
+        $ch = curl_init();
+        $options = array(
+            CURLOPT_URL => $url,
+            CURLOPT_HEADER => 0,
+            CURLOPT_POST => 1,
+            CURLOPT_HTTPHEADER => $header,
+            CURLOPT_POSTFIELDS => $post,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_FORBID_REUSE => 1,
+            CURLOPT_TIMEOUT => 100,
+            CURLOPT_FRESH_CONNECT => 1
+        );
+        curl_setopt_array($ch, $options);
+        $msg = curl_exec($ch);
+
+        curl_close($ch);
+
+        return $msg;
+    }
 }
-?>

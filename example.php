@@ -76,7 +76,17 @@ echo "\nОтправляем Suretly данные договора займа...
 echo "\nПолучаем договор для Заемщика"; $sdk->getContract($orderID);sleep(1);
 echo "\nОжидаем подтверждения от Заёмщика";sleep(2);
 
-if (mt_rand(0,1)){
+$r = mt_rand(0,100);
+if ( $r >= 10 ){
+
+    echo "\nПрикрепляем фото заемщика к заявке id: " . $orderID;
+
+    $fname = realpath('11819743.png');
+    $cfile = new CURLFile($fname, 'image/png','11819743.png');
+    $sdk->uploadImage($orderID, $cfile);
+
+    sleep(5);
+
     echo "\nЗаемщик подписал договор";
     $sdk->postContractAccept($orderID);
     echo "\nИдет поиск поручителей...\n";

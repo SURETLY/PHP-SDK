@@ -32,10 +32,4 @@ interface HttpClientInterface
      * @return Config
      */
     public function getConfig();
-
-    /**
-     * @deprecated Will be removed in version v0.4.
-     * @return Client
-     */
-    public function getClient();
 }

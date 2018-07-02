@@ -25,6 +25,7 @@ class ContractApiTest extends TestCase
         $manager = new LenderManager($params);
         $newOrder = $this->getNewOrder($orderParams);
         $response = $manager->postNewOrder($newOrder);
+
         $orderId = $response->id;
         $contract = $manager->getContract($orderId);
         $this->assertNotNull($contract);

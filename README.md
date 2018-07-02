@@ -130,8 +130,9 @@ $currencies = $sdk->getCurrencies();
 $countries = $sdk->getCountries();
 ```
     
-## Migration version v0.2 to v0.3
+## Migration 
 
+### version v0.2 to v0.3
 First change: 
 
 ```php
@@ -150,4 +151,24 @@ $sdk->getOrders($limit, $skip);
 ```
 
 That's all.
+
+
+### version v0.3 to v0.4
+Now, you should use LenderManager instead Suretly.
+
+```php
+use Suretly\LenderApi\LenderManager;
+
+// create sdk
+$sdk = LenderManager::create('id', 'token');
+```
+
+Also, all field on Model is private and you should use getters and setters.
+
+```php
+// create sdk
+/** @var Order $order */
+$orderId = $order->getId();
+
+```
 

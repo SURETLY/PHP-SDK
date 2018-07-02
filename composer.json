@@ -1,22 +1,42 @@
 {
-
-    "name": "suretly/lender-api-sdk",
-    "type": "library",
-    "description": "PHP-SDK for Suretly Lender API",
-    "keywords": ["suretly", "lenderAPI"],
-    "homepage": "https://github.com/SURETLY/PHP-SDK",
-    "authors": [
-        {
-            "name": "Nikolay Dolgopolov",
-            "email": "dolgopolov.n.v@gmail.com",
-            "homepage": "https://github.com/ndolgopolov"
-        }
-    ],
-    "require": {
-        "php": ">=5.6",
-        "guzzlehttp/guzzle": "~6.0",
-        "paragonie/random_compat": "^2.0",
-        "netresearch/jsonmapper": "^1.3"
+  "name": "suretly/lender-api-sdk",
+  "type": "library",
+  "description": "PHP-SDK for Suretly Lender API",
+  "keywords": [
+    "suretly",
+    "lenderAPI"
+  ],
+  "homepage": "https://github.com/SURETLY/PHP-SDK",
+  "authors": [
+    {
+      "name": "Nikolay Dolgopolov",
+      "email": "dolgopolov.n.v@gmail.com",
+      "homepage": "https://github.com/ndolgopolov"
     },
-    "minimum-stability": "stable"
+    {
+      "name": "Aleksandr Serenko",
+      "email": "fafnur@yandex.ru"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/guzzle": "^6.3",
+    "paragonie/random_compat": "^2.0",
+    "netresearch/jsonmapper": "^1.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2",
+    "symfony/var-dumper": "^4.1"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Suretly\\LenderApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Suretly\\LenderApi\\Tests\\": "tests/"
+    }
+  }
 }

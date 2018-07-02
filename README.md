@@ -1,72 +1,153 @@
-# PHP-SDK
+# Suretly LenderAPI SDK
 
-SDK for Suretly Lender API
-## Installation
-To add SDK you need to copy SDK folder to your project and connect file Suretly.php in the place where you're going to use SDK. It is also possible to install via Composer: composer require suretly/lender-api-sdk
-## Connection
-    require_once "Suretly.php";
-    ...
-    $sdk = Suretly::ClientDemo("lender_id", "lender_token"); //Initializing the SDK to work with the demo-server
-    
-    $sdk = Suretly::ClientProduction("lender_id", "lender_token"); //Initializing the SDK to work with the production-server
+PHP7 SDK for Suretly Lender API
+
+## Installing LenderAPI SDK
+
+The recommended way to install LenderAPI SDK is through
+[Composer](http://getcomposer.org).
+
+```bash
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+```
+
+Next, run the Composer command to install the latest stable version of LenderAPI SDK:
+
+```bash
+php composer.phar require suretly/lender-api-sdk
+```
+
+After installing, you need to require Composer's autoloader:
+
+```php
+require 'vendor/autoload.php';
+```
+
+## Use
+
+After installing, you need to create a new LenderManager. 
+
+```php
+use Suretly\LenderApi\LenderManager;
+
+// Configuring your connection
+$config = [
+    'id' => '<your_id>',
+    'token' => '<your_token>',
+    'server' => '<server_name>'
+];
+
+$sdk = new LenderManager($config);
+```
 
 ## Calling API methods with SDK
 
-### #1 General methods
+### 1 General methods
 
-#### #1.1 Getting parameters for surety search
+#### 1.1 Getting parameters for surety search
 
-    $options = $sdk->getOptions();
+```php
+$options = $sdk->getOptions();
+```
+
 #### #1.2 Orders list
 
-    $orders = $sdk->getOrders($from, $to, $limit, $skip);
+```php
+$orders = $sdk->getOrders($limit, $skip);
+```
+
 ### #2 Creating and handling orders
 
 #### #2.2 Create surety order
-    $newOrder =  $sdk->mapToObject($orderJson, new NewOrder()); //create an order object
-    $orderID = $sdk->postNewOrder($newOrder)->id;
+
+```php
+$newOrder = $sdk->mapToObject($orderJson, new NewOrder());
+$orderID = $sdk->postNewOrder($newOrder)->id;
+```
     
 #### #2.3 Get order status
 
-    $orderStatus = $sdk->getOrderStatus($orderID);
+```php
+$orderStatus = $sdk->getOrderStatus($orderID);
+```
     
 #### #2.4 Cancel order
-    
-    $sdk->postOrderStop($orderID);
+
+```php
+$sdk->postOrderStop($orderID);
+```
     
 #### #2.9 Get borrower contract
 
-    $sdk->getContract($orderID);
+```php
+$contractHTML = $sdk->getContract($orderID);
+```
     
 #### #2.10 Confirm that contract is signed by borrower
 
-    $sdk->postContractAccept($orderID);
+```php
+$sdk->postContractAccept($orderID);
+```
     
 #### #2.11 Confirm that order is paid and issued
 
-    $sdk->postOrderIssued($orderID);
+```php
+$sdk->postOrderIssued($orderID);
+```
     
 ### #3 Working with order payment
 
 #### #3.5 Mark loan as paid
 
-    $sdk->postOrderPaid($orderID);
+```php
+$sdk->postOrderPaid($orderID);
+```
     
 #### #3.6 Mark loan as partially paid
 
-    $sdk->postOrderPartialPaid($orderID, $sum); //$sum - amount of partial payment of an order
-    
+```php
+$sdk->postOrderPartialPaid($orderID, $sum);
+```
+
 #### #3.7 Mark loan as overdue
 
-    $sdk->postOrderUnpaid($orderID);
-    
+```php
+$sdk->postOrderUnpaid($orderID, $sum);
+```
+
 ### Dictionaries
 
 #### Currencies
 
-    $currencies = $sdk->getCurrencies();
+```php
+$currencies = $sdk->getCurrencies();
+```
     
 #### Countries
 
-    $countries = $sdk->getCountries();
+```php
+$countries = $sdk->getCountries();
+```
+    
+## Migration version v0.2 to v0.3
+
+First change: 
+
+```php
+use Suretly\LenderApi\Suretly;
+```
+
+And second,  Method getOrders() consists of only limit and skip arguments. 
+
+```php
+// before
+$sdk->getOrders($from, $to, $limit, $skip);
+
+// after
+$sdk->getOrders($limit, $skip);
+
+```
+
+That's all.
 

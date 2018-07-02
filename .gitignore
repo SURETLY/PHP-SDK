@@ -2,3 +2,4 @@
 *.lock
 *.phar
 vendor/*
+phpunit.xml

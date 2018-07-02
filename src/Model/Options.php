@@ -11,43 +11,36 @@ namespace Suretly\LenderApi\Model;
 class Options
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $min_term Минимальный срок займа доступный для формирования завки, дни
      */
     public $min_term;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $max_term Максимальный срок займа доступный для формирования завки, дни
      */
     public $max_term;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $min_prolong Минимальный доступный срок для каждой пролонгации займа, дни
      */
     public $min_prolong;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $max_prolong Максимальный доступный срок для каждой пролонгации займа, дни
      */
     public $max_prolong;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $min_sum Минимальная сумма доступная для формирования завки
      */
     public $min_sum;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $max_sum Максимальная сумма доступная для формирования завки
      */
     public $max_sum;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $server_time Unixtime время на сервере, для синхронизации
      */
     public $server_time;

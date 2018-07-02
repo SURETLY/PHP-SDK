@@ -11,25 +11,21 @@ namespace Suretly\LenderApi\Model;
 class Name implements \JsonSerializable
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $first Имя
      */
     public $first;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $middle Отчество
      */
     public $middle;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $last Фамилия
      */
     public $last;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $maiden Фамилия до брака
      */
     public $maiden;

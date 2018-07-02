@@ -9,37 +9,31 @@ namespace Suretly\LenderApi\Model;
 class PassportRF extends IdentityDocument
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $series Серия
      */
     public $series;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $number Номер
      */
     public $number;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $issue_date Дата выдачи
      */
     public $issue_date;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $issue_place Место выдачи
      */
     public $issue_place;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $issue_code Код подразделения
      */
     public $issue_code;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Address $registration Адрес прописки
      */
     public $registration;

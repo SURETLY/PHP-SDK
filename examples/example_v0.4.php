@@ -6,10 +6,7 @@ use Suretly\LenderApi\LenderManager;
 require __DIR__ . '/../vendor/autoload.php';
 
 // Создание основного класса SDK
-$sdk = new LenderManager([
-    'id' => '59ca100acea0997574cef785',
-    'token' => '317'
-]);
+$sdk = LenderManager::create('59ca100acea0997574cef785', '317', 'develop');
 
 /**
  * @return object
@@ -118,7 +115,7 @@ try {
         print_r($orderStatus);
         sleep(3);
 
-        switch ($orderStatus->status) {
+        switch ($orderStatus->getStatus()) {
             case 2:
                 echo "\nПоиск поручителей остановлен заемщиком";
                 exit();
@@ -132,7 +129,7 @@ try {
                 break;
         }
 
-    } while ($orderStatus->status != 4);
+    } while ($orderStatus->getStatus() != 4);
 
     if (mt_rand(0, 1)) {
         echo "\nЗаявка оплачена и выдана ";

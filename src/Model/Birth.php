@@ -11,13 +11,11 @@ namespace Suretly\LenderApi\Model;
 class Birth implements \JsonSerializable
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $date Дата рождения
      */
     public $date;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $place Место
      */
     public $place;

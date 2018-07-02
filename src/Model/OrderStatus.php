@@ -11,61 +11,51 @@ namespace Suretly\LenderApi\Model;
 class OrderStatus
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $id Идентификатор заявки
      */
     public $id;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $status Статус
      */
     public $status;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var boolean $public Доступна ли заявка публично
      */
     public $public;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $sum Сумма на которую уже поручились поручители к текущему моменту
      */
     public $sum;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $cost текущая стоимость услуг поручителей для заемщика
      */
     public $cost;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $bids_count сколько найдено поручителей
      */
     public $bids_count;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $stop_time время до окончания сбора средств
      */
     public $stop_time;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $fee_total сумма вознаграждений за поручительство по текущей заявке
      */
     public $fee_total;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $fee_paid оплаченно вознагражденй
      */
     public $fee_paid;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $payment_link Ссылка для оплаты вознаграждения или для оплаты долга на сайте Suretly (изменяется в зависимости от статуса)
      */
     public $payment_link;

@@ -5,11 +5,6 @@ namespace Suretly\LenderApi\Config;
 /**
  * Class Config
  * @package Suretly\LenderApi\Config
- * @property string $URL_SCHEME is deprecated and will be removed in version v0.4. Use method getScheme().
- * @property string $API_HOST is deprecated and will be removed in version v0.4. Use method getHost().
- * @property string $API_PORT is deprecated and will be removed in version v0.4. Use method getPost().
- * @property string $SDK_VERSION is deprecated and will be removed in version v0.4. Use method getVersion().
- * @property string $SDK_NAME is deprecated and will be removed in version v0.4. Use const self::SDK_NAME.
  */
 final class Config implements ConfigInterface
 {
@@ -22,7 +17,7 @@ final class Config implements ConfigInterface
     /**
      * @var string $sdkVersion SDK version
      */
-    private $sdkVersion = 'v0.3';
+    private $sdkVersion = 'v0.4';
 
     /**
      * @var string $version API version
@@ -115,40 +110,6 @@ final class Config implements ConfigInterface
     public function getUserAgent()
     {
         return  self::SDK_NAME . '/' . $this->getSdkVersion();
-    }
-
-    /**
-     * @param string $name
-     * @return null|string
-     */
-    public function __get($name)
-    {
-        $return = null;
-
-        switch ($name) {
-            case 'URL_SCHEME':
-                $return = $this->getScheme();
-                break;
-            case 'API_HOST':
-                $return = $this->getHost();
-                break;
-            case 'API_PORT':
-                $return = $this->getPort();
-                break;
-            case 'SDK_VERSION':
-                $return = $this->getVersion();
-                break;
-            case 'SDK_NAME':
-                $return = self::SDK_NAME;
-                break;
-            default:
-                throw new \UnexpectedValueException('The property is not found.');
-        }
-        if($return) {
-            trigger_error("Property $name is deprecated and should no longer be used", E_USER_DEPRECATED);
-        }
-
-        return $return;
     }
 
     /**

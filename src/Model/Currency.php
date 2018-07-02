@@ -11,19 +11,16 @@ namespace Suretly\LenderApi\Model;
 class Currency
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4.
      * @var string $id
      */
     public $id;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $code Код валюты
      */
     public $code;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $name Название валюты
      */
     public $name;
@@ -77,6 +74,4 @@ class Currency
     {
         $this->id = $id;
     }
-
-
 }

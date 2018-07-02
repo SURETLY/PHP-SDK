@@ -11,76 +11,59 @@ namespace Suretly\LenderApi\Model;
 class Borrower implements \JsonSerializable
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Name $name Экземпляр имени заемщика
      */
-    public $name;
+   public $name;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $gender Пол
      */
-    public $gender;
+   public $gender;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Birth $birth Экземпляр даты и места рождения
      */
-    public $birth;
+   public $birth;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $email Электроанная почта
      */
-    public $email;
+   public $email;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $phone Телефон
      */
-    public $phone;
+   public $phone;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $city Город заемщика
      */
-    public $city;
+   public $city;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $profile_url Ссылка на соц. сети
      */
-    public $profile_url;
+   public $profile_url;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $photo_url Ссылка на изображение заемщика
      */
-    public $photo_url;
+   public $photo_url;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
-     * @var PassportRF $identity_document Документ удостоверяющий личность
+     * @var mixed $identity_document Документ удостоверяющий личность
      */
-    public $identity_document;
+   public $identity_document;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $identity_document_type Тип документа удостоверяющего личность
      */
-    public $identity_document_type;
+   public $identity_document_type;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Address $residential
      */
-    public $residential;
-
-    /**
-     * @deprecated Will be removed in version v0.4.
-     * @var string $ip
-     */
-    public $ip;
+   public $residential;
 
     /**
      * @inheritdoc
@@ -264,21 +247,5 @@ class Borrower implements \JsonSerializable
     public function setResidential($residential)
     {
         $this->residential = $residential;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIp()
-    {
-        return $this->ip;
-    }
-
-    /**
-     * @param string $ip
-     */
-    public function setIp($ip)
-    {
-        $this->ip = $ip;
     }
 }

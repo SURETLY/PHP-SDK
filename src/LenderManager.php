@@ -20,15 +20,9 @@ use Suretly\LenderApi\Model\Order;
 use Suretly\LenderApi\Model\Orders;
 use Suretly\LenderApi\Model\OrderStatus;
 
-
 /**
- * Class Suretly
+ * Class LenderManager
  * @package Suretly\LenderApi
- * @property \GuzzleHttp\Client $apiClient is deprecated and will be removed in version v0.4.
- * @property \JsonMapper $jsonMapper is deprecated and will be removed in version v0.4.
- * @property \JsonMapper $config is deprecated and will be removed in version v0.4.
- * @property \JsonMapper $id is deprecated and will be removed in version v0.4.
- * @property \JsonMapper $token is deprecated and will be removed in version v0.4.
  */
 class LenderManager implements
     ContractApiInterface,
@@ -43,6 +37,18 @@ class LenderManager implements
     const BODY = 'body';
     const ID = 'id';
     const AUTH = 'auth';
+
+    /**
+     * Create LenderManager
+     * @param $id
+     * @param $token
+     * @param string $server
+     * @return LenderManager
+     */
+    public static function create($id, $token, $server = 'develop')
+    {
+        return new LenderManager(compact('id', 'token', 'server'));
+    }
 
     /**
      * @var HttpClientInterface $httpClient
@@ -62,40 +68,6 @@ class LenderManager implements
     {
         $this->httpClient = new HttpClient($config);
         $this->jsonMapper = new \JsonMapper();
-    }
-
-    /**
-     * @param string $name
-     * @return null|string
-     */
-    public function __get($name)
-    {
-        $return = null;
-
-        switch ($name) {
-            case 'apiClient':
-                $return = $this->getHttpClient()->getClient();
-                break;
-            case 'jsonMapper':
-                $return = $this->jsonMapper;
-                break;
-            case 'config':
-                $return = $this->getHttpClient()->getConfig();
-                break;
-            case 'id':
-                $return = $this->getHttpClient()->getConfig()->getId();
-                break;
-            case 'token':
-                $return = $this->getHttpClient()->getConfig()->getToken();
-                break;
-            default:
-                throw new \UnexpectedValueException('The property is not found.');
-        }
-        if($return) {
-            trigger_error("Property $name is deprecated and should no longer be used", E_USER_DEPRECATED);
-        }
-
-        return $return;
     }
 
     /**
@@ -179,19 +151,6 @@ class LenderManager implements
     }
 
     /**
-     * @param int $from
-     * @param int $to
-     * @param int $limit
-     * @param int $skip
-     * @return mixed
-     * @throws Exception\ResponseErrorException
-     * @throws \JsonMapper_Exception
-     */
-    public function orders($from, $to, $limit, $skip){
-        return $this->getOrders($limit, $skip);
-    }
-
-    /**
      * @inheritDoc
      */
     public function getOrder($id)
@@ -241,17 +200,6 @@ class LenderManager implements
                 ]
             ]
         ]);
-    }
-
-    /**
-     * @deprecated Method is deprecated and will be removed in version v0.4.
-     * @param string $orderId
-     * @param \CURLFile $cfile
-     * @throws ResponseErrorException
-     */
-    public function uploadImage($orderId, $cfile)
-    {
-        $this->postUploadImageOrder($orderId, $cfile->name);
     }
 
     /**

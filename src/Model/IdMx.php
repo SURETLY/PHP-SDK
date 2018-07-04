@@ -3,22 +3,17 @@
 namespace Suretly\LenderApi\Model;
 
 /**
- * Казахский паспорт (ID)
+ * IdMx
  *
- * Class IdKZ
+ * Class IdMx
  * @package Suretly\LenderApi\Model
  */
-class IdKZ extends IdentityDocument
+class IdMx extends IdentityDocument
 {
     /**
      * @var string $number Номер
      */
     public $number;
-
-    /**
-     * @var string $iin ИИН
-     */
-    public $iin;
 
     /**
      * @var string $issue_date Дата выдачи
@@ -31,9 +26,14 @@ class IdKZ extends IdentityDocument
     public $issue_place;
 
     /**
-     * @var string $expire_date Срок действия
+     * @var string $expire_date Дата оканчания
      */
     public $expire_date;
+
+    /**
+     * @var string $authority Authority
+     */
+    public $authority;
 
     /**
      * @return string
@@ -49,22 +49,6 @@ class IdKZ extends IdentityDocument
     public function setNumber($number)
     {
         $this->number = $number;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIin()
-    {
-        return $this->iin;
-    }
-
-    /**
-     * @param string $iin
-     */
-    public function setIin($iin)
-    {
-        $this->iin = $iin;
     }
 
     /**
@@ -113,5 +97,21 @@ class IdKZ extends IdentityDocument
     public function setExpireDate($expire_date)
     {
         $this->expire_date = $expire_date;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthority()
+    {
+        return $this->authority;
+    }
+
+    /**
+     * @param string $authority
+     */
+    public function setAuthority($authority)
+    {
+        $this->authority = $authority;
     }
 }

@@ -9,7 +9,6 @@ use Suretly\LenderApi\Api\OptionsApiInterface;
 use Suretly\LenderApi\Api\OrderApiInterface;
 use Suretly\LenderApi\Api\OrdersApiInterface;
 use Suretly\LenderApi\Config\Route;
-use Suretly\LenderApi\Exception\ResponseErrorException;
 use Suretly\LenderApi\Http\HttpClient;
 use Suretly\LenderApi\Http\HttpClientInterface;
 use Suretly\LenderApi\Model\Country;
@@ -226,14 +225,6 @@ class LenderManager implements
     public function postOrderIssued($id)
     {
         $this->httpClient->post(Route::ORDER_ISSUED, $this->getParamId($id));
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function postOrderPublished($id)
-    {
-        $this->httpClient->post(Route::ORDER_PUBLISHED, $this->getParamId($id));
     }
 
     /**

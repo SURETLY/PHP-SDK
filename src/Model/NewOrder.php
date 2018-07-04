@@ -11,7 +11,7 @@ namespace Suretly\LenderApi\Model;
 class NewOrder implements \JsonSerializable
 {
     /**
-     * @var string $uid Ваш внутренний id заявки, опциональный
+     * @var null|string $uid Ваш внутренний id заявки, опциональный
      */
     public $uid;
 
@@ -24,11 +24,6 @@ class NewOrder implements \JsonSerializable
      * @var Borrower $borrower Информация о заемщике
      */
     public $borrower;
-
-    /**
-     * @var string $credit_score_type Тип скоринга
-     */
-    public $credit_score_type;
 
     /**
      * @var int $user_credit_score Скоринг заемщика
@@ -69,7 +64,7 @@ class NewOrder implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getUid()
     {
@@ -114,22 +109,6 @@ class NewOrder implements \JsonSerializable
     public function setBorrower($borrower)
     {
         $this->borrower = $borrower;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreditScoreType()
-    {
-        return $this->credit_score_type;
-    }
-
-    /**
-     * @param string $credit_score_type
-     */
-    public function setCreditScoreType($credit_score_type)
-    {
-        $this->credit_score_type = $credit_score_type;
     }
 
     /**

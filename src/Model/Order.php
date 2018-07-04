@@ -36,11 +36,6 @@ class Order
     public $borrower;
 
     /**
-     * @var string $credit_score_type Тип скоринга
-     */
-    public $credit_score_type;
-
-    /**
      * @var integer $user_credit_score Скоринг пользователя
      */
     public $user_credit_score;
@@ -171,7 +166,7 @@ class Order
     /**
      * @return bool
      */
-    public function isPublic()
+    public function getIsPublic()
     {
         return $this->is_public;
     }
@@ -198,22 +193,6 @@ class Order
     public function setBorrower($borrower)
     {
         $this->borrower = $borrower;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreditScoreType()
-    {
-        return $this->credit_score_type;
-    }
-
-    /**
-     * @param string $credit_score_type
-     */
-    public function setCreditScoreType($credit_score_type)
-    {
-        $this->credit_score_type = $credit_score_type;
     }
 
     /**

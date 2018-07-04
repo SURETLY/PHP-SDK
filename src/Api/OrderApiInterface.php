@@ -79,14 +79,6 @@ interface OrderApiInterface
     public function postOrderIssued($id);
 
     /**
-     * Публикация заявки для поиска поручителей
-     *
-     * @param string $id
-     * @throws ResponseErrorException
-     */
-    public function postOrderPublished($id);
-
-    /**
      * Отметить займ как выплаченный
      *
      * @param string $id

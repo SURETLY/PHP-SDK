@@ -11,11 +11,6 @@ namespace Suretly\LenderApi\Model;
 class Currency
 {
     /**
-     * @var string $id
-     */
-    public $id;
-
-    /**
      * @var string $code Код валюты
      */
     public $code;
@@ -55,23 +50,5 @@ class Currency
     public function setName($name)
     {
         $this->name = $name;
-    }
-
-    /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4.
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4.
-     * @param string $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 }

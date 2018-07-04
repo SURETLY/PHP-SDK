@@ -11,13 +11,11 @@ namespace Suretly\LenderApi\Model;
 class Orders
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $total Количество
      */
     public $total;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Order[] $list Список заявок
      */
     public $list;

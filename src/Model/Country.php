@@ -11,19 +11,16 @@ namespace Suretly\LenderApi\Model;
 class Country
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $code Код страны
      */
     public $code;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $name Название страны
      */
     public $name;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $currency_code Код валюты страны
      */
     public $currency_code;

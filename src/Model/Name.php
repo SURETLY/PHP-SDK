@@ -11,26 +11,22 @@ namespace Suretly\LenderApi\Model;
 class Name implements \JsonSerializable
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $first Имя
      */
     public $first;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
-     * @var string $middle Отчество
+     * @var null|string $middle Отчество
      */
     public $middle;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $last Фамилия
      */
     public $last;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
-     * @var string $maiden Фамилия до брака
+     * @var null|string $maiden Фамилия до брака
      */
     public $maiden;
 
@@ -59,7 +55,7 @@ class Name implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getMiddle()
     {
@@ -67,7 +63,7 @@ class Name implements \JsonSerializable
     }
 
     /**
-     * @param string $middle
+     * @param null|string $middle
      */
     public function setMiddle($middle)
     {
@@ -91,7 +87,7 @@ class Name implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getMaiden()
     {
@@ -99,7 +95,7 @@ class Name implements \JsonSerializable
     }
 
     /**
-     * @param string $maiden
+     * @param null|string $maiden
      */
     public function setMaiden($maiden)
     {

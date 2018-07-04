@@ -11,133 +11,106 @@ namespace Suretly\LenderApi\Model;
 class Order
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $id Идентификатор заявки
      */
     public $id;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $uid Ваш внутренний id заявки (опциональный)
      */
     public $uid;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $status Статус заявки
      */
     public $status;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var boolean $is_public Доступна ли заявка публично
      */
     public $is_public;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Borrower $borrower Информация о заемщике
      */
     public $borrower;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
-     * @var string $credit_score_type Тип скоринга
-     */
-    public $credit_score_type;
-
-    /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $user_credit_score Скоринг пользователя
      */
     public $user_credit_score;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $loan_sum Сумма займа
      */
     public $loan_sum;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $loan_term Срок в днях
      */
     public $loan_term;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $loan_rate Процентная ставка
      */
     public $loan_rate;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $currency_code Код валюты
      */
     public $currency_code;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $callback Url callback (http://server.ru/?id=******)
      */
     public $callback;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $cost Стоимость поручительства
      */
     public $cost;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $max_wait_time Сколько времени искать заемщиков (сек)
      */
     public $max_wait_time;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $created_at Дата создания
      */
     public $created_at;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $createdAt Дата редактирования
      */
     public $modify_at;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer $createdAt Дата закрытия
      */
     public $closed_at;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var integer Сколько найдено поручителей
      */
     public $bids_count;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $bids_sum Сумма поручительств
      */
     public $bids_sum;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $payment_link Ссылка для оплаты вознаграждения или для оплаты долга на сайте Suretly (изменяется в зависимости от статуса)
      */
     public $payment_link;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $fee_total Полная сумма вознаграждения поручителям
      */
     public $fee_total;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $fee_paid Оплаченная заемщиком сумма вознаграждения поручителям.
      */
     public $fee_paid;
@@ -220,22 +193,6 @@ class Order
     public function setBorrower($borrower)
     {
         $this->borrower = $borrower;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreditScoreType()
-    {
-        return $this->credit_score_type;
-    }
-
-    /**
-     * @param string $credit_score_type
-     */
-    public function setCreditScoreType($credit_score_type)
-    {
-        $this->credit_score_type = $credit_score_type;
     }
 
     /**

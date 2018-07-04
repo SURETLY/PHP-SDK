@@ -11,61 +11,46 @@ namespace Suretly\LenderApi\Model;
 class NewOrder implements \JsonSerializable
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
-     * @var string $uid Ваш внутренний id заявки, опциональный
+     * @var null|string $uid Ваш внутренний id заявки, опциональный
      */
     public $uid;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var bool $is_public Доступна ли заявка публично
      */
     public $is_public;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var Borrower $borrower Информация о заемщике
      */
     public $borrower;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
-     * @var string $credit_score_type Тип скоринга
-     */
-    public $credit_score_type;
-
-    /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $user_credit_score Скоринг заемщика
      */
     public $user_credit_score;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $loan_sum сумма Займа
      */
     public $loan_sum;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var int $loan_term Срок в днях
      */
     public $loan_term;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var float $loan_rate Процентная ставка
      */
     public $loan_rate;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $currency_code Код валюты
      */
     public $currency_code;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $callback Url callback (http://server.ru/?id=******)
      */
     public $callback;
@@ -79,7 +64,7 @@ class NewOrder implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getUid()
     {
@@ -97,7 +82,7 @@ class NewOrder implements \JsonSerializable
     /**
      * @return bool
      */
-    public function isPublic()
+    public function getIsPublic()
     {
         return $this->is_public;
     }
@@ -124,22 +109,6 @@ class NewOrder implements \JsonSerializable
     public function setBorrower($borrower)
     {
         $this->borrower = $borrower;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreditScoreType()
-    {
-        return $this->credit_score_type;
-    }
-
-    /**
-     * @param string $credit_score_type
-     */
-    public function setCreditScoreType($credit_score_type)
-    {
-        $this->credit_score_type = $credit_score_type;
     }
 
     /**

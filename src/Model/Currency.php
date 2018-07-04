@@ -17,13 +17,11 @@ class Currency
     public $id;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $code Код валюты
      */
     public $code;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $name Название валюты
      */
     public $name;

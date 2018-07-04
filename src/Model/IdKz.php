@@ -5,37 +5,32 @@ namespace Suretly\LenderApi\Model;
 /**
  * Казахский паспорт (ID)
  *
- * Class IdKZ
+ * Class IdKz
  * @package Suretly\LenderApi\Model
  */
-class IdKZ extends IdentityDocument
+class IdKz extends IdentityDocument
 {
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $number Номер
      */
     public $number;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $iin ИИН
      */
     public $iin;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $issue_date Дата выдачи
      */
     public $issue_date;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $issue_place Место выдачи
      */
     public $issue_place;
 
     /**
-     * @deprecated Do not use a public variable. Will be removed in version v0.4. Use getter/setters methods.
      * @var string $expire_date Срок действия
      */
     public $expire_date;

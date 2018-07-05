@@ -45,6 +45,18 @@ class LenderManager implements
     const AUTH = 'auth';
 
     /**
+     * Create LenderManager
+     * @param $id
+     * @param $token
+     * @param string $server
+     * @return LenderManager
+     */
+    public static function create($id, $token, $server = 'develop')
+    {
+        return new LenderManager(compact('id', 'token', 'server'));
+    }
+
+    /**
      * @var HttpClientInterface $httpClient
      */
     private $httpClient;

@@ -92,19 +92,17 @@ After, you can add new order on Suretly server with method `postNewOrder`:
 $orderID = $sdk->postNewOrder($newOrder)->id;
 ```
 
-Method `postNewOrder` return object with 2 fields
+Method `postNewOrder` return object with order ID
 ```php
 /** @var object $response */
 $response = $sdk->postNewOrder($newOrder);
 $orderID = $response->id;
-$feeAmount = $response->fee_amount;
 ```
 
 For example, json data
 ```json
 {
-    "id": "string",
-    "fee_amount": 0
+    "id": "string"
 }
 ```
 

@@ -41,27 +41,27 @@ class Address implements \JsonSerializable
     public $house;
 
     /**
-     * @var string $suite Корпус
+     * @var null|string $suite Корпус
      */
     public $suite;
 
     /**
-     * @var string $building Строение
+     * @var null|string $building Строение
      */
     public $building;
 
     /**
-     * @var string $flat Квартира
+     * @var null|string $flat Квартира
      */
     public $flat;
 
     /**
-     * @var string $flat Адрес №1 (сша)
+     * @var null|string $address_line_1 Адрес №1 (сша)
      */
     public $address_line_1;
 
     /**
-     * @var string $flat Адрес №2 (сша)
+     * @var null|string $address_line_2 Адрес №2 (сша)
      */
     public $address_line_2;
 
@@ -170,7 +170,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getSuite()
     {
@@ -178,7 +178,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param string $suite
+     * @param null|string $suite
      */
     public function setSuite($suite)
     {
@@ -186,7 +186,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getBuilding()
     {
@@ -194,7 +194,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param string $building
+     * @param null|string $building
      */
     public function setBuilding($building)
     {
@@ -210,7 +210,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param string $flat
+     * @param null|string $flat
      */
     public function setFlat($flat)
     {
@@ -218,7 +218,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getAddressLine1()
     {
@@ -226,7 +226,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param string $address_line_1
+     * @param string|null $address_line_1
      */
     public function setAddressLine1($address_line_1)
     {
@@ -234,7 +234,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getAddressLine2()
     {
@@ -242,7 +242,7 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param string $address_line_2
+     * @param string|null $address_line_2
      */
     public function setAddressLine2($address_line_2)
     {

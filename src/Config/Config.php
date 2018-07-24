@@ -80,7 +80,7 @@ final class Config implements ConfigInterface
         }
 
         if (!isset($config['server'])) {
-            $this->host = 'develop.suretly.io';
+            $this->host = 'sandbox.suretly.io';
         } else {
             $this->host = $config['server'] . '.suretly.io';
         }

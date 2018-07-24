@@ -60,8 +60,6 @@ final class HttpClient implements HttpClientInterface
         try {
             $response = $this->client->post($this->getUri($uri, $params), $this->getOptions($params))->getBody();
         } catch (BadResponseException $exception) {
-            var_dump((string)$exception->getResponse()->getBody()->getContents());
-            exit;
             throw new ResponseErrorException((string)$exception->getResponse()->getBody()->getContents(), $exception->getCode());
         }
 

@@ -131,7 +131,12 @@ class LenderManager implements
      */
     public function mapToArrayObject($response, $class)
     {
-        return $this->jsonMapper->mapArray($this->getData($response), [], $class);
+        $data = $this->getData($response);
+        if(!$data) {
+            $data = [];
+        }
+
+        return $this->jsonMapper->mapArray($data, [], $class);
     }
 
     /**
@@ -155,7 +160,7 @@ class LenderManager implements
      */
     public function getCountries()
     {
-        $response = $this->httpClient->get(Route::CURRENCIES, [self::AUTH => false]);
+        $response = $this->httpClient->get(Route::COUNTRIES, [self::AUTH => false]);
 
         return $this->mapToArrayObject($response, Country::class);
     }

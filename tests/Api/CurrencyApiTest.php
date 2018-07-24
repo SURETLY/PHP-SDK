@@ -37,7 +37,7 @@ class CurrenciesApiTest extends TestCase
                 'params' => [
                     'id' => '59ca100acea0997574cef785',
                     'token' => '317',
-                    'server' => 'develop'
+                    'server' => 'sandbox'
                 ]
             ]
         ];

@@ -51,7 +51,7 @@ class LenderManager implements
      * @param string $server
      * @return LenderManager
      */
-    public static function create($id, $token, $server = 'develop')
+    public static function create($id, $token, $server = 'sandbox')
     {
         return new LenderManager(compact('id', 'token', 'server'));
     }

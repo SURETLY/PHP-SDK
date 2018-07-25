@@ -18,7 +18,7 @@ class Suretly extends LenderManager
      */
     public static function ClientDemo($id, $token)
     {
-        $server = 'develop';
+        $server = 'sandbox';
 
         return new LenderManager(compact('id', 'token', 'server'));
     }

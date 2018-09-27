@@ -291,7 +291,6 @@ class OrderApiTest extends TestCase
                         ],
                         'email' => 'tsi@targaryen.com',
                         'phone' => '+30001235678',
-                        'profile_url' => 'https://www.facebook.com/GameOfThrones/',
                         'photo_url' => 'https://www.google.ru/logos/doodles/2018/world-cup-2018-day-17-6229715604996096.2-law.gif',
                         'city' => 'Novosibirsk',
                         'identity_document_type' => 'passport_rf',

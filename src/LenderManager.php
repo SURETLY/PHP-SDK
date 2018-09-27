@@ -198,7 +198,7 @@ class LenderManager implements
             ],
             'multipart' => [
                 [
-                    'name' => 'upfile',
+                    'name' => 'file',
                     'contents' => file_get_contents($realPathToFile),
                     'filename' => $filename
                 ]

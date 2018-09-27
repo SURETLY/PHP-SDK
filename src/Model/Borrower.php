@@ -41,7 +41,7 @@ class Borrower implements \JsonSerializable
    public $city;
 
     /**
-     * @var string $profile_url Ссылка на соц. сети
+     * @var null|string $profile_url Ссылка на соц. сети
      */
    public $profile_url;
 
@@ -170,7 +170,7 @@ class Borrower implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getProfileUrl()
     {
@@ -178,7 +178,7 @@ class Borrower implements \JsonSerializable
     }
 
     /**
-     * @param string $profile_url
+     * @param null|string $profile_url
      */
     public function setProfileUrl($profile_url)
     {

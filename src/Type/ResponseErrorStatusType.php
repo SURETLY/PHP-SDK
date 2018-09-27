@@ -1,12 +1,10 @@
 <?php
 
-namespace SuretlySDK\Type;
-
-use Suretly\LenderApi\Type\AbstractEnumType;
+namespace Suretly\LenderApi\Type;
 
 /**
  * Class ResponseErrorStatusType
- * @package SuretlySDK\Type
+ * @package Suretly\LenderApi\Type
  */
 class ResponseErrorStatusType extends AbstractEnumType
 {

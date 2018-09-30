@@ -202,7 +202,7 @@ class Borrower implements \JsonSerializable
     }
 
     /**
-     * @return PassportRF
+     * @return mixed
      */
     public function getIdentityDocument()
     {
@@ -210,7 +210,7 @@ class Borrower implements \JsonSerializable
     }
 
     /**
-     * @param PassportRF $identity_document
+     * @param mixed $identity_document
      */
     public function setIdentityDocument($identity_document)
     {

@@ -63,10 +63,14 @@ class PassportRF extends IdentityDocument
     }
 
     /**
-     * @param string $number
+     * @param $number
+     * @throws \Exception
      */
     public function setNumber($number)
     {
+        if(strlen($number) !== 6) {
+            throw new \Exception('Invalid identity number, length must be equal 6');
+        }
         $this->number = $number;
     }
 

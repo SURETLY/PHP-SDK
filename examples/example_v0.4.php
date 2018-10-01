@@ -6,7 +6,7 @@ use Suretly\LenderApi\LenderManager;
 require __DIR__ . '/../vendor/autoload.php';
 
 // Создание основного класса SDK
-$sdk = LenderManager::create('q2', '317', 'develop');
+$sdk = LenderManager::create('q2', '317', 'sandbox');
 
 /**
  * @return object
@@ -37,7 +37,7 @@ function getNewOrder()
             'identity_document_type' => 'passport_rf',
             'identity_document' => [
                 'series' => '5201',
-                'number' => '2345678',
+                'number' => '234567',
                 'issue_date' => '01.05.2012',
                 'issue_place' => 'Novosibirsk',
                 'issue_code' => '540-07',
@@ -65,7 +65,7 @@ function getNewOrder()
         ],
         'credit_score_type' => 'default',
         'user_credit_score' => 10,
-        'loan_sum' => 25000.00,
+        'loan_sum' => 47000.00,
         'loan_term' => 30,
         'loan_rate' => 56.34,
         'currency_code' => 'RUB'

@@ -51,7 +51,7 @@ class Borrower implements \JsonSerializable
    public $photo_url;
 
     /**
-     * @var mixed $identity_document Документ удостоверяющий личность
+     * @var $identity_document Документ удостоверяющий личность
      */
    public $identity_document;
 

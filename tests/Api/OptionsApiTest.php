@@ -44,7 +44,7 @@ class OptionsApiTest extends TestCase
                 'params' => [
                     'id' => 'q2',
                     'token' => '317',
-                    'server' => 'develop'
+                    'server' => 'sandbox'
                 ]
             ]
         ];

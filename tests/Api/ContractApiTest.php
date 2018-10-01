@@ -62,7 +62,7 @@ class ContractApiTest extends TestCase
                 'params' => [
                     'id' => 'q2',
                     'token' => '317',
-                    'server' => 'develop'
+                    'server' => 'sandbox'
                 ],
                 'newOrder' => [
                     'uid' => '100500',
@@ -87,7 +87,7 @@ class ContractApiTest extends TestCase
                         'identity_document_type' => 'passport_rf',
                         'identity_document' => [
                             'series' => '5201',
-                            'number' => '2345678',
+                            'number' => '234567',
                             'issue_date' => '01.05.2012',
                             'issue_place' => 'Novosibirsk',
                             'issue_code' => '540-07',

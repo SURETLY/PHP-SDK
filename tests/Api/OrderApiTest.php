@@ -272,7 +272,7 @@ class OrderApiTest extends TestCase
                 'params' => [
                     'id' => 'q2',
                     'token' => '317',
-                    'server' => 'develop'
+                    'server' => 'sandbox'
                 ],
                 'newOrder' => [
                     'uid' => '100500',
@@ -291,12 +291,13 @@ class OrderApiTest extends TestCase
                         ],
                         'email' => 'tsi@targaryen.com',
                         'phone' => '+30001235678',
+                        'profile_url' => 'https://www.facebook.com/GameOfThrones/',
                         'photo_url' => 'https://www.google.ru/logos/doodles/2018/world-cup-2018-day-17-6229715604996096.2-law.gif',
                         'city' => 'Novosibirsk',
                         'identity_document_type' => 'passport_rf',
                         'identity_document' => [
                             'series' => '5201',
-                            'number' => '2345678',
+                            'number' => '234567',
                             'issue_date' => '01.05.2012',
                             'issue_place' => 'Novosibirsk',
                             'issue_code' => '540-07',
@@ -323,8 +324,8 @@ class OrderApiTest extends TestCase
                         ]
                     ],
                     'credit_score_type' => 'default',
-                    'user_credit_score' => 500,
-                    'loan_sum' => 25000.00,
+                    'user_credit_score' => 10,
+                    'loan_sum' => 47000.00,
                     'loan_term' => 30,
                     'loan_rate' => 56.34,
                     'currency_code' => 'RUB'
